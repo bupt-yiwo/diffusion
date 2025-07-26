@@ -1,0 +1,29 @@
+data:
+  path: /wangxiao/VQGAN/data/psi
+  image_size: 256
+  random_flip: true
+
+model:
+  in_channels: 3
+  out_ch: 3
+  ch: 128
+  ch_mult: [1, 1, 2, 2, 4, 4]
+  num_res_blocks: 2
+  attn_resolutions: [16]
+  dropout: 0.1
+  resamp_with_conv: true
+
+training:
+  batch_size: 16
+  lr: 0.00004
+  n_epochs: 300
+  ema_decay: 0.9999
+  save_interval: 3125
+  log_dir: logs
+  ckpt_dir: checkpoints
+
+diffusion:
+  beta_schedule: linear
+  beta_start: 0.0001
+  beta_end: 0.02
+  num_diffusion_timesteps: 1000

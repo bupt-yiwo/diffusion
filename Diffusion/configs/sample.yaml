@@ -1,0 +1,9 @@
+sampling:
+  ckpt: checkpoints/ckpt_5000.pt
+  save_dir: samples
+  n_samples: 16
+  sampler: ddim
+  eta: 0.0
+  
+diffusion:
+  var_type: fixedsmall
